@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
   const description = document.querySelector('#project-desc').value.trim();
 
   if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/posts`, {
       method: 'POST',
       body: JSON.stringify({ name, needed_funding, description }),
       headers: {
@@ -23,10 +23,8 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/projects/${id}`, {
+  const id = parseInt(event.target.id);
+    const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE',
     });
 
@@ -35,13 +33,19 @@ const delButtonHandler = async (event) => {
     } else {
       alert('Failed to delete project');
     }
-  }
+
 };
 
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+if(document.querySelector(".btn-danger")){
+  delBtn=document.querySelectorAll('.btn-danger')
+  for (let i = 0; i < delBtn.length; i++) {
+    delBtn[i].addEventListener("click", delButtonHandler)
+  }
+  // document
+  // .querySelector('.btn-danger')
+  // .addEventListener('click', delButtonHandler);
+}
