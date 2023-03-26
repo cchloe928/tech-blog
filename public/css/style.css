@@ -10,6 +10,7 @@ header, .post:not(:last-child) {
   color: #1b89bc;
   text-decoration: none;
   font-size: 100%;
+  padding: 20px;
 }
 
 .no-button:hover {
@@ -17,8 +18,38 @@ header, .post:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+#title {
+  border-radius: 5px;
+  color: #000000;
+  box-shadow: 3px 3px 3px gray;
+  background-color: aquamarine;
+  margin-left: 100px;
+}
+
+#techblog {
+  background-color: black;
+}
+
+
+
+#mvc {
+  border: solid black;
+  
+}
+
+h2 {
+  border: solid black;
+  background-color: black;
+  color: white;
+}
+
+#authentication {
+  border: solid black;
+
+}
+
+#object {
+  border: solid black;
+
+
 }

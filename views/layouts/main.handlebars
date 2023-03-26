@@ -11,12 +11,11 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
+    <header id="techblog" class="display-flex justify-space-between align-center p-2">
       <nav>
+        <button class="no-button" id="home">home</button>
+        <button class="no-button" id="dashboard">dashboard</button>
+
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -25,13 +24,29 @@
         <a href="/login">login</a>
         {{/if}}
       </nav>
+      <br>
+      <h1 id="title"><a href="/">The Tech Blog</a></h1>
+
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
+      <div id="mvc">
+        <h2>Why MVC is so important</h2>
+        <p>MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer  </p>
+      </div>
+      <div id="authentication">
+        <h2>Authentication vs. Autho</h2>
+        <p>There is a difference between</p>
+      </div>
+      <div id="object">
+        <h2>Object-Relational</h2>
+        <p>I have really loved learning </p>
+      </div>
+
     </main>
     <footer>
-      
+
     </footer>
   </div>
 
